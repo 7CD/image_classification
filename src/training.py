@@ -48,7 +48,7 @@ def validate(model, loader, loss_fn, device):
 
 
 def train(model, train_loader, val_loader, loss_fn, optimizer, epochs, device, logger, 
-          model_save_path=None, scheduler=None, start_epoch=1, best_val_acc=0, verbose=True):
+          model_save_path=None, scheduler=None, start_epoch=1, best_val_acc=0):
     model.to(device)
 
     logger.info('Start training with params:')
@@ -86,6 +86,3 @@ def train(model, train_loader, val_loader, loss_fn, optimizer, epochs, device, l
                                 #'optimizer_state_dict': optimizer.state_dict(),
                                 'epochs': epoch,
                                 'accuracy': best_val_acc}, fp)
-        #if verbose:        
-        #    print('Epoch #{}. lr: {:.8}, train loss: {:.5f}, val loss: {:.5f}, val accuracy: {:.5f} (best: {:.5f})'.\
-        #          format(epoch, optimizer.param_groups[0]['lr'], train_loss, val_loss, val_acc, best_val_acc))
