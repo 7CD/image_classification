@@ -13,9 +13,6 @@ def parse_arguments():
 
 
 def load_dataset(url, data_dir):
-    if os.path.exists(data_dir):
-        print(f'Path "{path}" already exists.')
-        return
     download_and_extract_archive(url, download_root=data_dir, 
                                  extract_root=data_dir, remove_finished=False)
 
