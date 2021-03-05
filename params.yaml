@@ -1,0 +1,6 @@
+data_load:
+  full_size_url: https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2.tgz
+  320px_url: https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2-320.tgz
+  160px_url: https://s3.amazonaws.com/fast-ai-imageclas/imagewoof2-160.tgz
+  data_dir: data
+

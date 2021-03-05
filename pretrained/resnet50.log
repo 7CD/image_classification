@@ -1,0 +1,45 @@
+2021-03-04 22:11:45 Start training with params:
+2021-03-04 22:11:45 loss_fn: torch.nn.functionalcross_entropy
+2021-03-04 22:11:45 optimizer: SGD({'lr': 0.001, 'momentum': 0.9, 'dampening': 0, 'weight_decay': 0.001, 'nesterov': False})
+2021-03-04 22:11:45 scheduler: ReduceLROnPlateau{'factor': 0.1, 'min_lrs': [0], 'patience': 3, 'verbose': False, 'cooldown': 0, 'cooldown_counter': 0, 'mode': 'min', 'threshold': 0.0001, 'threshold_mode': 'rel', 'best': inf, 'num_bad_epochs': 0, 'mode_worse': inf, 'eps': 1e-08, 'last_epoch': 0}
+2021-03-04 22:11:45 train dataloader: batch_size=128
+transform=Compose(
+    RandomApply(
+    p=0.8
+    RandomRotation(degrees=[-15.0, 15.0], resample=False, expand=False, fill=(127, 127, 127))
+)
+    RandomAffine(degrees=[0.0, 0.0], translate=(0.1, 0.1), scale=(0.83, 1.2), fillcolor=(127, 127, 127))
+    Resize(size=224, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(224, 224))
+    RandomHorizontalFlip(p=0.5)
+    ToTensor()
+    RandomApply(
+    p=0.5
+    <Imagewoof.src.utils.Cutout object at 0x7fee20852990>
+)
+    Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))
+)
+2021-03-04 22:11:45 val dataloader: batch_size=256
+transform=Compose(
+    Resize(size=224, interpolation=PIL.Image.BILINEAR)
+    CenterCrop(size=(224, 224))
+    ToTensor()
+    Normalize(mean=(0.485, 0.456, 0.406), std=(0.229, 0.224, 0.225))
+)
+2021-03-04 22:11:45 device: cuda
+2021-03-04 22:11:45 model save path: pretrained/resnet50.pth
+2021-03-04 22:11:45 Starting epoch 1/5. lr: 0.001
+2021-03-04 22:13:06 Epoch finished. Train loss: 0.54158
+2021-03-04 22:13:33 Val loss: 0.14345, val accuracy: 0.95622 (best: 0.95622)
+2021-03-04 22:13:34 Starting epoch 2/5. lr: 0.001
+2021-03-04 22:14:56 Epoch finished. Train loss: 0.18943
+2021-03-04 22:15:24 Val loss: 0.12636, val accuracy: 0.95979 (best: 0.95979)
+2021-03-04 22:15:25 Starting epoch 3/5. lr: 0.001
+2021-03-04 22:16:47 Epoch finished. Train loss: 0.15816
+2021-03-04 22:17:14 Val loss: 0.12475, val accuracy: 0.96055 (best: 0.96055)
+2021-03-04 22:17:15 Starting epoch 4/5. lr: 0.001
+2021-03-04 22:18:37 Epoch finished. Train loss: 0.13872
+2021-03-04 22:19:05 Val loss: 0.12502, val accuracy: 0.96030 (best: 0.96055)
+2021-03-04 22:19:05 Starting epoch 5/5. lr: 0.001
+2021-03-04 22:20:28 Epoch finished. Train loss: 0.12391
+2021-03-04 22:20:55 Val loss: 0.12334, val accuracy: 0.96055 (best: 0.96055)
